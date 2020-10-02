@@ -2,8 +2,8 @@ window.onload = function () {
     //window.addEventListener("load",()=>{//load means,whenever the windows load, this function will run
     var long;
     var lat;
-    var tenperatureDescription = document.querySelector(".temperature-description");
-    var tenperatureDegree = document.querySelector(".temperature-degree");
+    var temperatureDescription = document.querySelector(".temperature-description");
+    var temperatureDegree = document.querySelector(".temperature-degree");
     var locationTimezone = document.querySelector(".location-timezone");
     var temperatureSection = document.querySelector(".temperature");
     var temperatureSpan = document.querySelector(".temperature span");
@@ -24,8 +24,8 @@ window.onload = function () {
                     // console.log(data);
                     const {temperature,summary,icon} = data.currently;
                     //Printing DOM Elements
-                    tenperatureDegree.textContent = temperature;
-                    tenperatureDescription.textContent = summary;
+                    temperatureDegree.textContent = temperature;
+                    temperatureDescription.textContent = summary;
                     locationTimezone.textContent = data.timezone;
                         //Changing to celcius formula
                     var celcius = ((temperature - 32) * (5 / 9)).toFixed(1);
@@ -36,11 +36,11 @@ window.onload = function () {
                     temperatureSection.addEventListener("click",function(){
                         if(temperatureSpan.textContent === "F"){
                             temperatureSpan.textContent = "C";
-                            tenperatureDegree.textContent = celcius;
+                            temmperatureDegree.textContent = celcius;
                         }
                         else{
                             temperatureSpan.textContent = "F";
-                            tenperatureDegree.textContent = temperature;
+                            temperatureDegree.textContent = temperature;
                         }
                     });
                 });
